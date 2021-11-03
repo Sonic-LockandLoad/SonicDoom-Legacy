@@ -1,0 +1,15 @@
+class PeeloutCheck : Inventory
+{
+	Default
+	{
+		Inventory.MaxAmount 1;
+	}
+}
+
+class KickCooldown : Inventory
+{
+	Default
+	{
+		Inventory.MaxAmount 25;
+	}
+}

@@ -1,0 +1,171 @@
+#library "snclkld"
+#include "zcommon.acs"
+#define CSF_SOLIDGROUND 1
+#define CSF_SOLIDACTORS 2
+#define CSF_ALL (CSF_SOLIDGROUND|CSF_SOLIDACTORS)
+
+//int StopBeingBrutal = 0;
+
+script "Taunt" (void)
+{
+	NoiseAlert(0, 0);
+	PlaySound(1001, "classic/taunt", CHAN_BODY, 1.0);
+}
+
+script "TransformSuper" (void)
+{
+	if (CheckInventory("PowerSuper"))
+	{
+		if (GetCvar("SupClassic") == 1) {
+			SetMusic("m_supcls", 0);
+		}
+		while (CheckInventory("PowerSuper")) {
+		    SetMugShotState("Super");
+			Delay(35);
+		}
+		SetMusic("*", 0);
+		SetMugShotState("Normal");
+		switch(PlayerClass(PlayerNumber()))
+		{
+            case 3: // Shadow
+				SetActorProperty(1001, APROP_JumpZ, 15.0);
+				break;
+            default: // Everyone else
+				SetActorProperty(1001, APROP_JumpZ, 12.0);
+				break;
+        }
+	}
+	else
+	{
+		SetMusic("*", 0);
+	}
+}
+
+script "Invincibility" (void)
+{
+	if (!CheckInventory("PowerSuper") && !CheckInventory("PowerHyper")) {
+		if (CheckInventory("PowerInvulnerable")) {
+			if (GetCvar("InvClassic")) {
+				SetMusic("c_invinc", 0);
+			}
+			while (CheckInventory("PowerInvulnerable")) {
+				delay(15);
+			}
+			SetMusic("*", 0);
+		}
+		else {
+			SetMusic("*", 0);
+		}
+	}
+}
+
+script "InitMusic" ENTER
+{
+	SetMugShotState("Normal");
+	SetMusic("*", 0);
+}
+
+script "ChaosEmeraldHandler" (void)
+{
+	if (CheckInventory("PowerSuper") || CheckInventory("PowerHyper")) {
+		Log(s:"Chaos Energy refilled!");
+		TakeInventory("ChaosEmeralds", 1);
+		GiveInventory("ChaosEnergy", 999);
+	}
+	else {
+		Log(s:"\c[Gold]Press \cl", k:"invuse", s:" \c[Gold]to activate Super Sonic!");
+	}
+}
+
+script "DeathMusic" (int xdeath)
+{
+	if (GetCvar("DeathMusic")) {
+		if (xdeath) { SetMusic("C_DEADX", 0); }
+		else {
+			switch(PlayerClass(PlayerNumber())) {
+				SetMusic("C_DEADM", 0);
+				Delay(9*35);
+				SetMusic("*");
+			}
+		}
+	}
+}
+
+script "TakeRingsIfSuper" (void)
+{
+	while (CheckInventory("PowerSuper"))
+	{
+		Delay(2);
+		TakeInventory("ChaosEnergy", 1);
+		if (!CheckInventory("ChaosEnergy"))
+		{
+			TakeInventory("PowerSuper", 1);
+			TakeInventory("PowerInvulnerable", 1);
+		}
+	}
+}
+
+script "TakeRingsIfHyper" (void)
+{
+	while (CheckInventory("PowerHyper"))
+	{
+		Delay(2);
+		TakeInventory("ChaosEnergy", 2);
+		if (!CheckInventory("ChaosEnergy"))
+		{
+			TakeInventory("PowerHyper", 1);
+			TakeInventory("PowerInvulnerable", 1);
+		}
+	}
+}
+
+script "SetAirControl" ENTER
+{
+	 SetAirControl(0.5);
+}
+
+script "KickCooldown" ENTER
+{
+	while (true)
+	{
+		Delay(1);
+		TakeInventory("KickCooldown", 1);
+	}
+}
+
+script "RingCountCheck" ENTER
+{
+	while (true)
+	{
+		Delay(2);
+		if (CheckInventory("Health") > 500)
+		{
+			GiveInventory("OverRinged2", 1);
+		}
+		else if (CheckInventory("Health") > 300)
+		{
+			GiveInventory("OverRinged", 1);
+		}
+		else
+		{
+			TakeInventory("PowerOverRinged", 1);
+			TakeInventory("PowerOverRinged2", 1);
+		}
+	}
+	
+}
+
+script "GiveTID" ENTER
+{
+	Thing_ChangeTID(0, 1001);
+}
+
+script "NoMusic" (void)
+{
+	SetMusic("", 0);
+}
+
+script "ResetMusic" (void)
+{
+	SetMusic("*", 0);
+}

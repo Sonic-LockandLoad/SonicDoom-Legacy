@@ -1,0 +1,346 @@
+class SoulsphereReplace : Actor replaces Soulsphere // 2013
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSMA0
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosEmeralds");
+			Stop;
+	}
+}
+
+class MegasphereReplace : CustomInventory replaces Megasphere // 83
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSMA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosEmeralds");
+			Stop;
+	}
+}
+
+class BFGReplace : Actor replaces BFG9000 // 2006
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSMA0
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosEmeralds");
+			Stop;
+	}
+}
+
+class BerserkReplace : Actor replaces Berserk // 2023
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCA0
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("RedChaosCapsule");
+			Stop;
+	}
+}
+
+class BackpackReplace : Actor replaces Backpack // 8
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite BPAKA0
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("FakeBackpack");
+			Stop;
+	}
+}
+
+class PistolReplace : Actor replaces Pistol // 5010
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite PISTA0
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosBlaster");
+			Stop;
+	}
+}
+
+class ChainsawReplace : Actor replaces Chainsaw // 2005
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite CSAWA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("FakeChainsaw");
+			Stop;
+	}
+}
+
+class ShotgunReplace : Actor replaces Shotgun // 2001
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite SCATA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("SpeedyShotgun");
+			Stop;
+	}
+}
+
+class ChaingunReplace : Actor replaces Chaingun // 2002
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite MGUNA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosRain");
+			Stop;
+	}
+}
+
+class SSGReplace : Actor replaces SuperShotgun // 82
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite SURIA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("SpeedyShotgun");
+			Stop;
+	}
+}
+
+class RocketReplace : Actor replaces RocketLauncher // 2003
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite LAUNA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ClassicRocketStream");
+			Stop;
+	}
+}
+
+class PlasmaRifleReplace : Actor replaces PlasmaRifle // 2004
+{
+	Default
+	{
+		//$Category Lock & Load Weapons
+		//$Sprite ECLIA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosRain");
+			Stop;
+	}
+}
+
+class ClipReplace : Actor replaces Clip // 2007
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite RIN2A0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosRingGravity");
+			Stop;
+	}
+}
+
+class ArmorReplace : Actor replaces GreenArmor // 2018
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosCapsule");
+			Stop;
+	}
+}
+
+class BlueArmorReplace : Actor replaces BlueArmor // 2019
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCC0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("RedChaosCapsule");
+			Stop;
+	}
+}
+
+class ShellReplace : Actor replaces Shell // 2008
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosCapsule");
+			Stop;
+	}
+}
+
+class ClipBoxReplace : Actor replaces ClipBox // 2048
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCA0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosCapsule");
+			Stop;
+	}
+}
+
+class ShellBoxReplace : Actor replaces ShellBox // 2049
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCB0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("BlueChaosCapsule");
+			Stop;
+	}
+}
+
+class RocketAmmoReplace : Actor replaces RocketAmmo // 2010
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCB0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("BlueChaosCapsule");
+			Stop;
+	}
+}
+
+class RocketBoxReplace : Actor replaces RocketBox // 2046
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCC0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("RedChaosCapsule");
+			Stop;
+	}
+}
+
+class CellReplace : Actor replaces Cell // 2047
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCB0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("BlueChaosCapsule");
+			Stop;
+	}
+}
+class CellPackReplace : Actor replaces CellPack // 17
+{
+	Default
+	{
+		//$Category Lock & Load Replacements
+		//$Sprite CHSCC0
+	}
+	States 
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("RedChaosCapsule");
+			Stop;
+	}
+}
+
+class InvulReplace : Actor replaces InvulnerabilitySphere // 2022
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		//$Sprite INVCA0
+		//$Title Invincibility
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItem("InvincibilityBox");
+			Stop;
+	}
+}
+
+class RadSuitReplace : InvulReplace {} // That's rad.

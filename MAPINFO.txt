@@ -1,0 +1,224 @@
+gameinfo
+{
+   PlayerClasses = "SonicPlayer"
+   QuitMessages = "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7"
+   InfoPage = "ABOUTLL"
+   TitlePage = "TITLEPIC"
+   CreditPage = "CREDIT"
+   TitleMusic = "S_TITLE"
+   IntermissionMusic = "S_INTER"
+   FinaleMusic = "S_RECAP"
+   menufontcolor_title = "ActiveOption"
+   menufontcolor_label = "MenuInactive"
+   menufontcolor_value = "White"   
+   menufontcolor_action = "White"
+   menufontcolor_header = "MenuInactive"
+   menufontcolor_highlight = "MenuInactive"
+   menufontcolor_selection = "MenuActive"
+}
+
+DamageType SonicKick
+{
+	Factor = 1
+}
+
+episode TUTORIAL
+{
+	name = "Tutorial"
+}
+
+map TUTORIAL "Tutorial"
+{
+	music = C_TUT
+	next = "S_LOBBY"
+	author = "That1M8Head"
+	partime = 120
+	resethealth
+	resetinventory
+}
+
+clearskills
+
+skill justwhy
+{
+	spawnfilter = Easy
+	monsterhealth = 0.5
+	name = "Too slow"
+	mustconfirm = "Trust me, you're gonna feel too overpowered."
+	totalinfighting
+}
+
+skill easy
+{
+	damagefactor = 0.25
+	name = "Fast Track"
+	spawnfilter = Easy
+	totalinfighting
+}
+
+skill standard
+{
+	name = "Steady Speed"
+	spawnfilter = Normal
+	defaultskill
+}
+
+skill hard
+{
+	spawnfilter = Hard
+	name = "Real Power"
+}
+
+skill harder
+{
+	damagefactor = 2
+	name = "Speed Incarnate"
+	spawnfilter = Hard
+	FastMonsters
+}
+
+// Ultimate Doom episode clusters
+
+cluster 1
+{
+	pic = "INTERPIC"
+	exittext = lookup, "E1TEXT"
+}
+
+cluster 2
+{
+	pic = "INTERPIC"
+	exittext = lookup, "E2TEXT"
+}
+
+cluster 3
+{
+	pic = "INTERPIC"
+	exittext = lookup, "E3TEXT"
+}
+
+cluster 4
+{
+	pic = "INTERPIC"
+	exittext = lookup, "E4TEXT"
+}
+
+// DOOM II first cluster (up thru level 6)
+
+cluster 5
+{
+	pic = "INTERPIC"
+	exittext = lookup, "C1TEXT"
+}
+
+// DOOM II second cluster (up thru level 11)
+
+cluster 6
+{
+	pic = "INTERPIC"
+	exittext = lookup, "C2TEXT"
+}
+
+// DOOM II third cluster (up thru level 20)
+
+cluster 7
+{
+	pic = "INTERPIC"
+	exittext = lookup, "C3TEXT"
+}
+
+// DOOM II fourth cluster (up thru level 30)
+
+cluster 8
+{
+	pic = "INTERPIC"
+	exittext = lookup, "C4TEXT"
+}
+
+// DOOM II fifth cluster (level 31)
+
+cluster 9
+{
+	pic = "INTERPIC"
+	entertext = lookup, "C5TEXT"
+}
+
+// DOOM II sixth cluster (level 32)
+
+cluster 10
+{
+	pic = "INTERPIC"
+	entertext = lookup, "C6TEXT"
+}
+
+// Side Levels
+
+cluster 401
+{
+	music = "S_TITLE"
+}
+
+cluster 404
+{
+	pic = "S_INTER"
+	exittext = lookup, "BOSSEND"
+	music = "S_ENDING"
+}
+
+// Brutal Doom detection clusters
+cluster 412
+{
+	pic = "INFINFUN"
+	entertext = lookup, "INCOMPAT"
+	music = "S_GMOVR6"
+}
+
+cluster 413
+{
+	pic = "BLACK"
+	entertext = lookup, "FAILURE"
+	music = "Y0uD1dNt"
+}
+
+DoomEdNums
+{
+	2014  = "Ring"
+	2011  = "RingBox"
+	2012  = "SpecialRing"
+	2015  = "ChaosRing"
+	263   = "SoulRing"
+	260   = "Hint"
+	
+	6021  = "ChaosCapsule"
+	6022  = "BlueChaosCapsule"
+	6023  = "RedChaosCapsule"
+	
+	2013  = "ChaosEmeralds"
+	
+	2023  = "BerserkReplace"
+	8     = "BackpackReplace"
+	2007  = "ClipReplace"
+	2048  = "ClipBoxReplace"
+	2008  = "ShellReplace"
+	2049  = "ShellBoxReplace"
+	2010  = "RocketAmmoReplace"
+	2046  = "RocketBoxReplace"
+	2047  = "CellReplace"
+	17    = "CellPackReplace"
+	2018  = "ArmorReplace"
+	2019  = "BlueArmorReplace"
+	83    = "MegasphereReplace"
+	
+	5010  = "PistolReplace"
+	2005  = "ChainsawReplace"
+	2001  = "ShotgunReplace"
+	2002  = "ChaingunReplace"
+	82    = "SSGReplace"
+	2003  = "RocketReplace"
+	2004  = "PlasmaRifleReplace"
+	2006  = "BFGReplace"
+	
+	2022  = "InvulReplace"
+	2025  = "RadSuitReplace"
+	2045  = "Nintendo64"
+}

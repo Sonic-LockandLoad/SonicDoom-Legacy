@@ -1,0 +1,6 @@
+user int HUDType = 0;
+user int DeathMusic = 1;
+user int RingType = 1;
+
+user int SuperMusic = 1;
+user int InvincibilityMusic = 1;

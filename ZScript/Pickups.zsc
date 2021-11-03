@@ -1,0 +1,363 @@
+class Ring : CustomInventory replaces HealthBonus // 2014
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a ring.";
+		Inventory.PickupSound "spickup/ring";
+		+COUNTITEM
+		+NOGRAVITY
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+		Spawn:
+			RIN1 ABCDEFGHIJKLMNOP 1 A_SetScale(1, 0.9);
+			Loop;
+		Pickup:
+			TNT1 A 0 A_GiveInventory("Health", 1);
+			Stop;
+	}
+}
+
+class RingBox : CustomInventory replaces Stimpack // 2011
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Health 1;
+		Radius 20;
+		Height 30;
+		Inventory.PickupMessage "";
+		DeathSound "spickup/boxdestroy";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+SHOOTABLE
+		+NOBLOOD
+	}
+	States
+	{
+		Spawn:
+			RBOX A -1;
+			Stop;
+		Pickup:
+		Death:
+			TNT1 A 0 A_DropItem("BrokenRings");
+			TNT1 A 0 A_Scream;
+			Stop;
+	}
+}
+
+class BrokenRings : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up 10 rings.";
+		Inventory.PickupSound "spickup/10rings";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+		Spawn:
+			10RI ABCDEFGH 2;
+			10RI I -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_GiveInventory("Health", 10);
+			Stop;
+	}
+}
+
+class SpecialRing : CustomInventory replaces Medikit // 2012
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a Special ring.";
+		Inventory.PickupSound "spickup/specialring";
+		+COUNTITEM
+		+NOGRAVITY
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+		Spawn:
+			RIN2 ABCDEFGHIJKLMNOP 2 NoDelay A_SetScale(2, 1.7);
+			Loop;
+		Pickup:
+			TNT1 A 0
+			{
+				A_GiveInventory("ChaosEnergy", 50);
+				if (Health < 300) {
+					A_GiveInventory("Health", 50);
+					if (Health > 300) {
+						A_SetHealth(300);
+					}
+				}
+			}
+			Stop;
+  }
+}
+
+class ChaosRing : CustomInventory replaces ArmorBonus // 2015
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a Chaos ring.";
+		Inventory.PickupSound "spickup/ring";
+		+COUNTITEM
+		+NOGRAVITY
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+		Spawn:
+			RIN3 ABCDEFGHIJKLMNOP 1 A_SetScale(1, 0.9);
+			Loop;
+		Pickup:
+			TNT1 A 5
+			{
+				A_GiveInventory("Health", 5);
+				A_GiveInventory("ChaosEnergy", 1);
+			}
+			Stop;
+		} 
+}
+
+class ChaosRingGravity : ChaosRing
+{
+	Default
+	{
+		-NOGRAVITY
+	}
+}
+
+class Hint : CustomInventory // 260
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "";
+		Inventory.PickupSound "spickup/hint";
+	}
+	States
+	{
+		Spawn:
+			HELP A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_Print("");
+			Stop;
+	}
+}
+
+class SoulRing : CustomInventory
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a Soul ring.";
+		Inventory.PickupSound "spickup/ring";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+		Spawn:
+			RIN4 ABCDEFGHIJKLMNOP 1 A_SetScale(1, 0.9);
+			Loop;
+		Pickup:
+			TNT1 A 5 A_GiveInventory("ChaosEnergy", 50);
+			Stop;
+	}
+}
+
+class SoulRecharge : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a box of Soul rings!";
+		Inventory.PickupSound "spickup/specialring";
+	}
+	States
+	{
+		Spawn:
+			PSTR A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ChaosEnergy", 200);
+			Stop;
+	}
+}
+class InvincibilityBox : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "Invincibility!";
+		Inventory.PickupSound "spickup/boxdestroy";
+		+COUNTITEM
+	}
+	States
+	{
+		Spawn:
+			INVC A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_GiveInventory("Invincibility", 1);
+			TNT1 A 0 ACS_NamedExecute("Invincibility");
+			Stop;
+	}
+}
+class ShadowFever : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "Shadow Fever!";
+		Inventory.PickupSound "spickup/boxdestroy";
+		+COUNTITEM
+	}
+	States
+	{
+		Spawn:
+			SHAF A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_GiveInventory("Invincibility", 1);
+			TNT1 A 0 ACS_NamedExecute("Invincibility");
+			Stop;
+	}
+}
+class ChaosEmeralds : CustomInventory 
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "";
+		Inventory.PickupSound "spickup/chaosemerald";
+		+COUNTITEM
+		+INVENTORY.INVBAR
+		+INVENTORY.AUTOACTIVATE
+	}
+	States
+	{
+		Spawn:
+			CHSM A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_TakeInventory("ChaosEmeralds", 1);
+			TNT1 A 0
+			{
+				A_SetInventory("Health", 999);
+				if (CountInv("ChaosEnergy") < 100) {
+					A_SetInventory("ChaosEnergy", 100);
+				}
+			}
+			TNT1 A 0 A_GiveInventory("SuperForm", 1);
+			TNT1 A 0 A_GiveInventory("SuperInvincibility", 1);
+			TNT1 A 0 A_PlaySound("sglobal/supersonic", 6);
+			TNT1 A 0 A_PlaySound("sglobal/supertransform", 4);
+			TNT1 A 0 A_Log("\c[Sonic]Let's blast through with SONIC SPEED!");
+			TNT1 A 0 ACS_NamedExecute("TransformSuper");
+			TNT1 A 0 ACS_NamedExecuteAlways("TakeRingsIfSuper");
+			Stop;
+		}
+}
+
+class ChaosCapsule : ChaosEnergy // 6021
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a Chaos Energy capsule.";
+		Inventory.Amount 20;
+	}
+	States
+	{
+		Spawn:
+			CHSC A -1;
+			Stop;
+	}
+}
+class BlueChaosCapsule : ChaosEnergy // 6022
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a blue Chaos Energy capsule.";
+		Inventory.Amount 100;
+	}
+	States
+	{
+		Spawn:
+			CHSC B -1;
+			Stop;
+	}
+}
+class RedChaosCapsule : ChaosEnergy // 6023
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "Picked up a red Chaos Energy capsule.";
+		Inventory.Amount 400;
+	}
+	States
+	{
+		Spawn:
+			CHSC C -1;
+			Stop;
+	}
+}
+
+class Nintendo64 : CustomInventory replaces Infrared // 2045
+{
+	Default
+	{
+		//$Category Lock & Load Pickups
+		Inventory.PickupMessage "You got the Nintendo 64!";
+	}
+	States
+	{
+		Spawn:
+			NINT A -1;
+		Pickup:
+			NINT A 0 A_GiveInventory("Infrared");
+			NINT A 0 ACS_NamedExecute("SonicN64");
+	}
+}
+
+class FakeBackpack : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a backpack with nothing in it.";
+	}
+	States
+	{
+		Spawn:
+			BPAK A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_Print("\c[Sonic]Oh well, at least it looks cool.");
+			Stop;
+	}
+}
+
+class FakeChainsaw : CustomInventory	
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a useless chainsaw.";
+	}
+	States
+	{
+		Spawn:
+			CSAW A -1;
+			Stop;
+		Pickup:
+			TNT1 A 0 A_Print("\c[ClassicBlue]Chainsaw, huh? Yeah, I can't use this.");
+			Stop;
+	}
+}

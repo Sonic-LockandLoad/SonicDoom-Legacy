@@ -1,0 +1,140 @@
+LISTMENU "MainMenu"
+{
+	Position 80, 54
+	Font "BIGFONT", "InactiveOption", "ActiveOption"
+	TextItem "1P Play", "n", "PlayerClassMenu"
+	TextItem "About", "r", "ReadThisMenu"
+	TextItem "Options","o", "OptionsBranching"
+	TextItem "Load Data", "l", "LoadGameMenu"
+	TextItem "Save Data", "s", "SaveGameMenu"
+	TextItem "I'm Outta Here!", "q", "QuitMenu"
+	IfGame(Heretic, Hexen, Strife, Chex)
+	{
+		Font "SMALLFONT"
+		StaticText 78, 40, "Unsupported game"
+	}
+}
+OptionMenu "OptionsBranching"
+{
+	Title "Options"
+	
+	SubMenu "Configure Controls", "LLControlsMenu"
+	SubMenu "Configure Game Options", "LLCvarMenu"
+	SubMenu "Configure Mod", "LockandLoadOptions"
+	StaticText ""
+	SubMenu "GZDoom Options", "OptionsMenu"
+	SubMenu "Option Search", "os_menu"
+}
+OptionMenu "LLControlsMenu"
+{
+	Title "Controls"
+	StaticText "Required Bindings", "MenuActive"
+	Control "Fire", "+attack"
+	Control "Alt-Fire", "+altattack"
+	Control "Interact", "+use"
+	Control "Jump", "+jump"
+	Control "Crouch", "+crouch"
+	StaticText ""
+	SubMenu "All Control Bindings", "CustomizeControls"
+}
+OptionMenu "LLCvarMenu"
+{
+	Title "Game Options"
+	StaticText "It is highly recommended to enable these options.", "LightBlue"
+	Option "Always Run", "cl_run", "EnabledOrNot"
+	Option "Freelook", "freelook", "EnabledOrNot"
+}
+ListMenu "PlayerclassMenu"
+{
+	Font "BIGFONT", "ActiveOption"
+	Position 42, 63
+	StaticText 38, 38, "Select your character!"
+	Font "BIGFONT", "InactiveOption", "ActiveOption"
+	Position 97, 75
+	StaticPatch 200, 60, "sonic"
+	StaticPatch 200, 85, "amy"
+	StaticPatch 200, 110, "classic"
+	StaticPatch 200, 135, "shadow"
+}
+ListMenu "EpisodeMenu"
+{
+	Font "BIGFONT", "ActiveOption"
+	Position 42, 63
+	StaticText 46, 38, "Where are you headed?"
+	Position 68, 63
+	Font "BIGFONT", "InactiveOption", "ActiveOption"
+}
+ListMenu "SkillMenu"
+{
+	Position 42, 63
+	Font "BIGFONT", "ActiveOption"
+	StaticText 40, 38, "Select your skill!"
+	Position 58, 63
+	Font "BIGFONT", "InactiveOption", "ActiveOption"
+}
+OptionMenu "LockandLoadOptions"
+{
+	SubMenu "Music", "SDMusic"
+	SubMenu "Gameplay", "SDGameplay"
+	StaticText ""
+	Title "Mod Options"
+	Option "HUD Type", "HUDType", "HUDType"
+	StaticText "Changes which HUD is displayed.", "White"
+	StaticText "This will take effect as soon as you unpause the game.", "LightBlue"
+	StaticText ""
+}
+OptionMenu "SDMusic"
+{
+	Title "Music Options"
+	
+	Option "Super Sonic", "SuperMusic", "SuperM"
+	Option "Invincibility", "InvincibilityMusic", "InvinM"
+	StaticText ""
+	
+	StaticText "Other", "MenuActive"
+	Option "Hyper Form Music", "HyperMusic", "EnabledOrNot"
+	StaticText "If disabling this option, it is recommended you", "LightBlue"
+	StaticText "disable Classic Sonic's Super form music.", "LightBlue"
+	StaticText ""
+	Option "Death Music", "DeathMusic", "EnabledOrNot"
+}
+OptionMenu "SDGameplay"
+{
+	Title "Gameplay Options"
+	
+	Option "Boost Type", "VerticalBoost", "BoostType"
+	StaticText "Type A - horizontal only, anti-gravity, high speed", "LightBlue"
+	StaticText "Type B - aimable, no anti-gravity, less speed (can break maps)", "LightBlue"
+	
+	Option "Hyper Classic Sonic", "HyperSonic", "EnabledOrNot"
+	
+	Option "Dash Aiming", "DashAiming", "EnabledOrNot"
+	StaticText "Hold a direction to aim Classic Sonic's dash.", "LightBlue"
+	StaticText "This won't work with controllers.", "LightBlue"
+}
+AddOptionMenu "OptionsMenu"
+{
+	Title "GZDoom Options"
+}
+
+OptionValue "BoostType"
+{
+	0, "Type A"
+	1, "Type B"
+}
+OptionValue "EnabledOrNot"
+{
+	0, "Disabled"
+	1, "Enabled"
+}
+OptionValue "SuperM"
+{
+	0, "None"
+	1, "You Can Do Anything"
+	2, "Glimmering Gift"
+}
+OptionValue "InvinM"
+{
+	0, "None"
+	1, "Sonic 3D Blast (Saturn)"
+}

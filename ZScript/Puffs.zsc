@@ -1,0 +1,95 @@
+class NoGibPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		+NOEXTREMEDEATH
+		RenderStyle "Normal";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			PUFF A 4 Bright;
+			PUFF B 4;
+		Melee:
+			PUFF CD 4;
+			Stop;
+	}
+}
+
+class InvisiblePuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+RANDOMIZE
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 4 Bright;
+			TNT1 B 4;
+		Melee:
+			TNT1 CD 4;
+			Stop;
+	}
+}
+
+class GibPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+RANDOMIZE
+		+EXTREMEDEATH
+		RenderStyle "Normal";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			PUFF A 4 Bright;
+			PUFF B 4;
+		Melee:
+			PUFF CD 4;
+			Stop;
+	}
+}
+
+class InvisibleGibPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+RANDOMIZE
+		+EXTREMEDEATH
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 4 Bright;
+			TNT1 B 4;
+		Melee:
+			TNT1 CD 4;
+			Stop;
+	}
+}

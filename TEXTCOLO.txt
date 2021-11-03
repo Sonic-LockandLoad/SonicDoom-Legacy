@@ -1,0 +1,28 @@
+Sonic SonicBlue
+{
+	#003a66  #99d3ff
+	Console:
+		#003a66  #99d3ff
+	Flat:
+		#0092ff
+}
+
+ActiveOption
+{
+	#002bff  #00d2ff
+}
+
+InactiveOption
+{
+	#000f47  #1a24b2
+}
+
+MenuActive
+{
+	#1B1BFF  #9B9BFF
+}
+
+MenuInactive
+{
+	#001a9c  #0078FF
+}

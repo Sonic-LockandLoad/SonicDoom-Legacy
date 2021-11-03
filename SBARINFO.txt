@@ -1,0 +1,146 @@
+StatusBar Fullscreen, FullscreenOffsets
+{
+	DrawKeyBar 10, horizontal, auto, -38, -40, 0, 3, auto;
+	DrawString BIGFONT, LightBlue, time, -90, 2;
+	InInventory PowerSuper, 1
+	{
+		DrawMugShot 1, 5, -35;
+	}
+	Else
+	{
+		DrawMugShot 1, 0, -35;
+	}
+	
+	InInventory Not PowerSuper, 1
+	{
+		IfHealth 10
+		{
+			DrawNumber 3, HUDFONT_DOOM, Gold, Health, fillzeros, 75, -20;
+		}
+		IfHealth Not 10
+		{
+			DrawNumber 3, HUDFONT_DOOM, Red, Health, fillzeros, 75, -20;
+		}
+	}
+	
+	InInventory ChaosEnergy, 1
+	{
+		InInventory PowerSuper, 1
+		{
+			DrawNumber 3, HUDFONT_DOOM, Gold, "ChaosEnergy", fillzeros, -5, -20;
+		}
+		Else
+		{
+			DrawNumber 3, HUDFONT_DOOM, Green, "ChaosEnergy", fillzeros, -5, -20;
+		}
+	}
+	InInventory Not ChaosEnergy, 1
+	{
+		DrawNumber 3, HUDFONT_DOOM, Red, "ChaosEnergy", fillzeros, -5, -20;
+	}
+}
+
+StatusBar Normal
+{
+	DrawMugShot 1, 145, 165;
+	DrawKeyBar 10, vertical, auto, 240, 172, 0, 3, auto;
+
+	IfHealth 10 {
+		DrawNumber 3, HUDFONT_DOOM, Gold, Health, fillzeros, 135, 172;
+	}
+	IfHealth Not 10 {
+		DrawNumber 3, HUDFONT_DOOM, Red, Health, fillzeros, 135, 172;
+	}
+	DrawString SMALLFONT, Gold, "RINGS", 133, 190;
+
+	InInventory ChaosEnergy, 1 {
+		InInventory PowerSuper, 1 {
+			DrawNumber 4, HUDFONT_DOOM, Gold, "ChaosEnergy", 230, 172;
+		}
+		Else {
+			DrawNumber 4, HUDFONT_DOOM, Green, "ChaosEnergy", 230, 172;
+		}
+	}
+	InInventory Not ChaosEnergy, 1 {
+		DrawNumber 4, HUDFONT_DOOM, Red, "ChaosEnergy", 230, 172;
+	}
+	InInventory PowerSuper, 1 {
+		DrawString SMALLFONT, Gold, "SUPER", 229, 190;
+	}
+	Else {
+		DrawString SMALLFONT, Green, "ENERGY", 233, 190;
+	}
+}
+
+mugshot "Super"
+{
+  SUPR - 1;
+}
+
+mugshot "Rampage"
+{
+  RMPG 20;
+}
+
+mugshot "Boost"
+{
+  BOOS 20;
+}
+
+mugshot "Failure"
+{
+  FAIL 80;
+}
+
+mugshot "Shield"
+{
+  SHLD - 1;
+}
+
+mugshot "SuperBoost"
+{
+  SBOS 20;
+}
+
+mugshot "OK"
+{
+	{
+		ST00, ST01, ST02
+	}
+	80;
+}
+
+mugshot "Normal"
+{
+  {
+    ST00, ST01, ST02
+  }
+  17;
+}
+
+mugshot "Pain", directional
+{
+  {
+    TR00, KILL0, TL00
+  }
+  5;
+}
+
+mugshot "Ouch"
+{
+  OUCH0 5;
+}
+
+mugshot "Grin"
+{
+  EVL0 80;
+}
+
+mugshot "God"
+{
+  GOD0 - 1;
+}
+mugshot "Death"
+{
+  DEAD0 - 1;
+}

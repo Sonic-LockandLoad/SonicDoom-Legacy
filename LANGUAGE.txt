@@ -1,0 +1,193 @@
+[en default]
+
+SECRETMESSAGE = "\c[MenuActive] Found a secret!";
+TXT_YES = "Yeah!";
+TXT_NO = "No!";
+
+E1TEXT =
+	"Shadow scoffs. 'Those demons were no\n"
+	"challenge.'\n"
+	"\n"
+	"Sonic looks at him, displeased.\n"
+	"'Easy for you to say... Wait a minute...\n"
+	"where are we?'\n"
+	"\n"
+	"Amy looks around.\n"
+	"'Some kind of base... And more monsters?'\n"
+	"\n"
+	"Sonic sighs.\n"
+	"'Figures... I guess we're not done here\n"
+	"just yet.'";
+E2TEXT =
+	"Sonic looks beat up. 'That huge thing was tough!'\n"
+	"\n"
+	"Amy turns to him. 'Tell me about it!\n"
+	"I need a break already!'\n"
+	"\n"
+	"Shadow looks over the edge of the floating rock.\n"
+	"'I'd advise you don't. Look down there.'\n"
+	"\n" 
+	"Sonic jumps back. 'What the-- What IS that?!'\n"
+	"\n"
+	"Amy looks scared. 'I don't know, but I don't\n"
+	"like it one bit...'\n"
+	"\n"
+	"Shadow scoffs. 'Well, if we just stand here,\n"
+	"it won't get any better.'";
+E3TEXT =
+	"Amy looks relieved. Phew... I'm so glad'\n"
+	"it's over.\n"
+	"\n"
+	"Sonic looks over at her. 'You said it...\n"
+	"Let's head home.'\n"
+	"\n"
+	"Shadow holds out an arm in front of them.\n"
+	"'Wait.'\n"
+	"\n"
+	"Sonic looks at him, annoyed. 'What now?'\n"
+	"\n"
+	"Shadow turns around. 'I sense more of them.\n"
+	"And they're even stronger than last time.'\n"
+	"\n"
+	"Sonic stands up. 'No rest for the living, huh?'"
+	"\n"
+	"Amy looks at him, confused.";
+E4TEXT =
+	"Amy looks uneasy. 'Come on! What are the chances\n"
+	"there's ANOTHER one of those weird spider robots?\n"
+	"\n"
+	"Sonic stares at her, his eye twitching.\n"
+	"\n"
+	"Shadow ignores them. 'We need to take care of this\n"
+	"at the source. I'll lead the way.'\n";
+C1TEXT =
+	"Sonic looks perplexed. 'Something seems off...'\n"
+	"\n"
+	"Shadow looks over to him. 'These demonic\n"
+	"creatures seem to be affecting reality itself.'\n"
+	"\n"
+	"Amy finds an outpost. 'Look! Up ahead!\n"
+	"I think there's a way to the source of the\n"
+	"invasion past that point!'\n";
+C2TEXT =
+	"Amy looks happy. 'We made it! So... we're all\n"
+	"done, right?'"
+	"\n"
+	"Sonic isn't convinced. 'Yeah... no. We evacuated\n"
+	"everyone, but there's still all this to deal with.'\n"
+	"\n"
+	"Shadow runs off.\n"
+	"\n"
+	"Sonic looks surprised. 'Hey! Shadow! Wait up!'\n"
+	"He picks up Amy and chases after Shadow.";
+C3TEXT =
+	"Amy looks around. 'Where did you take us?'\n"
+	"\n"
+	"Shadow, not turning around, explains.\n"
+	"'This is where those creatures are coming from.'\n"
+	"\n"
+	"Sonic is confused. 'How did you even...?\n"
+	"\n"
+	"Shadow looks back at them. 'If we go through\n"
+	"this portal, we'll be taken to their world.'"
+	"\n"
+	"Amy seems worried.\n"
+	"'What if one of us gets hurt?'\n"
+	"\n"
+	"Shadow scoffs. 'Just git gud.'\n";
+C4TEXT =
+	"Sonic yawns. 'Well, that was boring.'\n"
+	"\n"
+	"Shadow looks down. 'This was the best\n"
+	"that Hell could throw at me...?'\n"
+	"\n"
+	"Amy walks back to the portal back home.\n"
+	"'In any case, I'm getting tired, and\n"
+	"I'd like to be home now.'\n"
+	"\n"
+	"Sonic jumps in the air before\n"
+	"following her. 'Mobius, here we come!'\n"
+	"\n"
+	"Amy looks confused. 'I thought it was Earth...'";
+C5TEXT =
+	"Sonic finds a secret place.\n"
+	"'Hey, what's this? Looks like an\n"
+	"abandoned... prison? Looks super old.'\n"
+	"\n"
+	"Amy grabs his arm.\n"
+	"'Sonic! We don't have time for this!'\n"
+	"\n"
+	"Sonic shakes her hand off. 'Heh, we've\n"
+	"got time to spare!'\n";
+C6TEXT =
+	"Sonic is running around the place like\n"
+	"a maniac, destroying any creature he sees."
+	"\n"
+	"Amy looks concerned. 'He's not gonna stop,\n"
+	"is he?'\n"
+	"\n"
+	"Shadow looks indifferent. 'He'll tire out\n"
+	"eventually.'";
+	
+BOSSEND =
+	"After defeating the E-SP567 robot,\n"
+	"Sonic comes to a standstill.\n"
+	"\n"
+	"'Awesome, I beat that stupid thing!...\n"
+	"Now, how the heck do I get out of here...?'\n"
+	"\n"
+	"He proceeds to keep staring at the blank\n"
+	"stone wall, waiting for the player to\n"
+	"start a new game...";
+	
+INCOMPAT =
+	"An irregularity has been detected.\n"
+	"\n"
+	"An actor class from an incompatible mod\n"
+	"was loaded or is present.\n"
+	"\n"
+	"This mod will not work with Sonic: Lock & Load.\n"
+	"\n"
+	"Relaunch the game without the mod, and remove\n"
+	"the mod from your autoload folder if present.\n"
+	"\n"
+	"Please check your GZDoom installation for more\n"
+	"information.\n"
+	"\n"
+	"Sonic: Lock and Load will no longer function\n"
+	"until the incompatibility is corrected.";
+	
+FAILURE =
+	"0x0000029A Critical system failure\n"
+	"\n"
+	"Forcing play despite incompatibility errors\n"
+	"\n"
+	"This may leave the game in an unusable state\n"
+	"\n"
+	"It is ill-advised to continue playing\n"
+	"\n"
+	"Please shut down the game immediately\n"
+	"\n"
+	"Sonic: Lock and Load is automatically\n"
+	"designed to shut down when any incompatible\n"
+	"actor class is detected\n"
+	"\n"
+	"Blacklisted actor class: 'BrutalWeapon'";
+	
+QUITMSG1 = "\c[MenuActive] I see your problem... too slow!";
+QUITMSG2 = "\c[MenuActive] What's the matter? Can't keep up?";
+QUITMSG3 = "\c[MenuActive] I've already lapped you three times...";
+QUITMSG4 = "\c[MenuActive] Hey! Wait! What about your memories?!";
+QUITMSG5 = "\c[MenuActive] Talk about low budget mods,\nno campaign or tutorial...";
+QUITMSG6 = "\c[MenuActive] How long is this game gonna go on?";
+QUITMSG7 = "\c[MenuActive] <Insert funny Sonic reference here>";
+
+NEWSAVE = "New Save Data";
+SAVEDEAD = "\c[MenuInactive] You're not currently playing.\n\nPress a key to go back.";
+GGSAVED = "Data saved successfully.";
+TXT_DEFAULTPICKUPMSG = "Picked up an item.";
+MNU_DELETESG = "Delete the save data ";
+WI_FINISHED			= "STAGE COMPLETE";
+WI_ENTERING			= "NEXT STAGE";
+
+DOSY = "\c[MenuInactive] Thanks for playing Sonic: Lock and Load!\nAre you sure you want to quit?";
