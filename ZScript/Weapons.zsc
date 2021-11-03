@@ -154,7 +154,7 @@ class SpeedyShotgun : Weapon
 		Fire:
 			SHTG A 4
 			{
-				A_FireBullets(5.6, 0, 7, 6, "BulletPuff");
+				A_FireBullets(5.6, 0, 7, 4, "BulletPuff");
 				if (CountInv("PowerSuper")) {
 					A_GiveInventory("ChaosEnergy", 8);
 				}
