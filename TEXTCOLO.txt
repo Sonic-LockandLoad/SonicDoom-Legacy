@@ -9,20 +9,20 @@ Sonic SonicBlue
 
 ActiveOption
 {
-	#002bff  #00d2ff
+	#0075ff  #56f6ff
 }
 
 InactiveOption
 {
-	#000f47  #1a24b2
+	#002946  #1a7bb2
 }
 
 MenuActive
 {
-	#1B1BFF  #9B9BFF
+	#1b84ff  #9bcdff
 }
 
 MenuInactive
 {
-	#001a9c  #0078FF
+	#00489c  #3585df
 }
