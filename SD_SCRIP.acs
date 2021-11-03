@@ -78,10 +78,10 @@ script "ChaosEmeraldHandler" (void)
 script "DeathMusic" (int xdeath)
 {
 	if (GetCvar("DeathMusic")) {
-		if (xdeath) { SetMusic("C_DEADX", 0); }
+		if (xdeath) { SetMusic("S_DEADX", 0); }
 		else {
 			switch(PlayerClass(PlayerNumber())) {
-				SetMusic("C_DEADM", 0);
+				SetMusic("S_DEADM", 0);
 				Delay(9*35);
 				SetMusic("*");
 			}
