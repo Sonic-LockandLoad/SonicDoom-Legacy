@@ -29,7 +29,7 @@ class SonicPlayer : PlayerPawn
 			PLAY A -1;
 			Loop;
 		See:
-			PLAY ABCD 4 ;
+			PLAY ABCD 4 A_SetSpeed(2);
 			Loop;
 		Missile:
 			PLAY E 12;
