@@ -74,14 +74,9 @@ ListMenu "SkillMenu"
 }
 OptionMenu "LockandLoadOptions"
 {
+	Title "Mod Options"
 	SubMenu "Music", "SDMusic"
 	SubMenu "Gameplay", "SDGameplay"
-	StaticText ""
-	Title "Mod Options"
-	Option "HUD Type", "HUDType", "HUDType"
-	StaticText "Changes which HUD is displayed.", "White"
-	StaticText "This will take effect as soon as you unpause the game.", "LightBlue"
-	StaticText ""
 }
 OptionMenu "SDMusic"
 {
@@ -92,36 +87,13 @@ OptionMenu "SDMusic"
 	StaticText ""
 	
 	StaticText "Other", "MenuActive"
-	Option "Hyper Form Music", "HyperMusic", "EnabledOrNot"
-	StaticText "If disabling this option, it is recommended you", "LightBlue"
-	StaticText "disable Classic Sonic's Super form music.", "LightBlue"
-	StaticText ""
 	Option "Death Music", "DeathMusic", "EnabledOrNot"
-}
-OptionMenu "SDGameplay"
-{
-	Title "Gameplay Options"
-	
-	Option "Boost Type", "VerticalBoost", "BoostType"
-	StaticText "Type A - horizontal only, anti-gravity, high speed", "LightBlue"
-	StaticText "Type B - aimable, no anti-gravity, less speed (can break maps)", "LightBlue"
-	
-	Option "Hyper Classic Sonic", "HyperSonic", "EnabledOrNot"
-	
-	Option "Dash Aiming", "DashAiming", "EnabledOrNot"
-	StaticText "Hold a direction to aim Classic Sonic's dash.", "LightBlue"
-	StaticText "This won't work with controllers.", "LightBlue"
 }
 AddOptionMenu "OptionsMenu"
 {
 	Title "GZDoom Options"
 }
 
-OptionValue "BoostType"
-{
-	0, "Type A"
-	1, "Type B"
-}
 OptionValue "EnabledOrNot"
 {
 	0, "Disabled"

@@ -43,11 +43,9 @@ script "TransformSuper" (void)
 
 script "Invincibility" (void)
 {
-	if (!CheckInventory("PowerSuper") && !CheckInventory("PowerHyper")) {
+	if (!CheckInventory("PowerSuper")) {
 		if (CheckInventory("PowerInvulnerable")) {
-			if (GetCvar("InvClassic")) {
-				SetMusic("c_invinc", 0);
-			}
+			SetMusic("s_invinc", 0);
 			while (CheckInventory("PowerInvulnerable")) {
 				delay(15);
 			}
@@ -67,7 +65,7 @@ script "InitMusic" ENTER
 
 script "ChaosEmeraldHandler" (void)
 {
-	if (CheckInventory("PowerSuper") || CheckInventory("PowerHyper")) {
+	if (CheckInventory("PowerSuper")) {
 		Log(s:"Chaos Energy refilled!");
 		TakeInventory("ChaosEmeralds", 1);
 		GiveInventory("ChaosEnergy", 999);
@@ -100,20 +98,6 @@ script "TakeRingsIfSuper" (void)
 		if (!CheckInventory("ChaosEnergy"))
 		{
 			TakeInventory("PowerSuper", 1);
-			TakeInventory("PowerInvulnerable", 1);
-		}
-	}
-}
-
-script "TakeRingsIfHyper" (void)
-{
-	while (CheckInventory("PowerHyper"))
-	{
-		Delay(2);
-		TakeInventory("ChaosEnergy", 2);
-		if (!CheckInventory("ChaosEnergy"))
-		{
-			TakeInventory("PowerHyper", 1);
 			TakeInventory("PowerInvulnerable", 1);
 		}
 	}
