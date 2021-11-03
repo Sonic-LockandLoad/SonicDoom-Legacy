@@ -1,2 +1,2 @@
 STARTUPTITLE = "Sonic the Hedgehog in Doom: Legacy Edition"
-STARTUPCOLORS = "4f1cf2", "41c90a"
+STARTUPCOLORS = "00FF00", "0000FF"
