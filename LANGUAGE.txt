@@ -76,9 +76,9 @@ E4TEXT =
 C1TEXT =
 	"You've entered deeply into the infested\n"
 	"starport... but something seems off. The\n"
-	"seem to be bringing their own reality\n"
-	"with them, and their presence seems to\n"
-	"be messing with the starport's technology.\n"
+	"monsters seem to be bringing their own\n"
+	"reality with them, and their presence seems\n"
+	"to be messing with the starport's technology.\n"
 	"\n"
 	"You see an outpost of Hell up ahead, a\n"
 	"fortified area. If you can get past there,\n"
