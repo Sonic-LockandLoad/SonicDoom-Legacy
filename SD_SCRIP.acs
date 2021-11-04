@@ -55,11 +55,9 @@ script "DeathMusic" (int xdeath)
 	if (GetCvar("DeathMusic")) {
 		if (xdeath) { SetMusic("S_DEADX", 0); }
 		else {
-			switch(PlayerClass(PlayerNumber())) {
-				SetMusic("S_DEADM", 0);
-				Delay(9*35);
-				SetMusic("*");
-			}
+			SetMusic("S_DEADM", 0);
+			Delay(9*35);
+			SetMusic("*");
 		}
 	}
 }
