@@ -1,10 +1,8 @@
-#library "snclkld"
+#library "snocdoom"
 #include "zcommon.acs"
 #define CSF_SOLIDGROUND 1
 #define CSF_SOLIDACTORS 2
 #define CSF_ALL (CSF_SOLIDGROUND|CSF_SOLIDACTORS)
-
-//int StopBeingBrutal = 0;
 
 script "Taunt" (void)
 {
@@ -16,8 +14,7 @@ script "TransformSuper" (void)
 {
 	if (CheckInventory("PowerSuper"))
 	{
-		if (GetCvar("VocalTracks")) {
-			SetMusic("m_supsnc", 0);
+		SetMusic("m_supsnc", 0);
 		while (CheckInventory("PowerSuper")) {
 		    SetMugShotState("Super");
 			Delay(35);
@@ -51,18 +48,6 @@ script "InitMusic" ENTER
 {
 	SetMugShotState("Normal");
 	SetMusic("*", 0);
-}
-
-script "ChaosEmeraldHandler" (void)
-{
-	if (CheckInventory("PowerSuper")) {
-		Log(s:"Chaos Energy refilled!");
-		TakeInventory("ChaosEmeralds", 1);
-		GiveInventory("ChaosEnergy", 999);
-	}
-	else {
-		Log(s:"\c[Gold]Press \cl", k:"invuse", s:" \c[Gold]to activate Super Sonic!");
-	}
 }
 
 script "DeathMusic" (int xdeath)

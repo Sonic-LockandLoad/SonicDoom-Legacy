@@ -248,21 +248,28 @@ class ChaosEmeralds : CustomInventory
 		Pickup:
 			TNT1 A 0 A_TakeInventory("ChaosEmeralds", 1);
 			TNT1 A 0
-			{
-				A_SetInventory("Health", 999);
-				if (CountInv("ChaosEnergy") < 100) {
-					A_SetInventory("ChaosEnergy", 100);
+			{	
+				if (CountInv("PowerSuper")) {
+					A_Log("Chaos Energy refilled!");
+					A_TakeInventory("ChaosEmeralds", 1);
+					A_GiveInventory("ChaosEnergy", 999);
+				}
+				else {
+					A_SetInventory("Health", 999);
+					if (CountInv("ChaosEnergy") < 100) {
+						A_SetInventory("ChaosEnergy", 100);
+					}
+					A_GiveInventory("SuperForm", 1);
+					A_GiveInventory("SuperInvincibility", 1);
+					A_PlaySound("sglobal/supersonic", 6);
+					A_PlaySound("sglobal/supertransform", 4);
+					A_Log("\c[Sonic]Let's blast through with SONIC SPEED!");
+					ACS_NamedExecuteAlways("TransformSuper");
+					ACS_NamedExecuteAlways("TakeRingsIfSuper");
 				}
 			}
-			TNT1 A 0 A_GiveInventory("SuperForm", 1);
-			TNT1 A 0 A_GiveInventory("SuperInvincibility", 1);
-			TNT1 A 0 A_PlaySound("sglobal/supersonic", 6);
-			TNT1 A 0 A_PlaySound("sglobal/supertransform", 4);
-			TNT1 A 0 A_Log("\c[Sonic]Let's blast through with SONIC SPEED!");
-			TNT1 A 0 ACS_NamedExecute("TransformSuper");
-			TNT1 A 0 ACS_NamedExecuteAlways("TakeRingsIfSuper");
 			Stop;
-		}
+	}
 }
 
 class ChaosCapsule : ChaosEnergy // 6021
