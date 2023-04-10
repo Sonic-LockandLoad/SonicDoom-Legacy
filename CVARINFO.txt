@@ -1,6 +1,17 @@
-user int HUDType = 0;
-user int DeathMusic = 1;
-user int RingType = 1;
+user int DeathMusic 				= 1;
+user int RingType 					= 1;
+user int InvincMusic 				= 1;
+user int SuperMusic 				= 1;
 
-user int SuperMusic = 1;
-user int InvincibilityMusic = 1;
+user bool Subtitles 				= true;
+
+/* Temporary CVARs */
+user noarchive string LastWeapon		= "";
+user noarchive bool	  IsSpinDashing		= false;
+user noarchive bool	  DidJump			= false;
+user noarchive bool	  IsCrouching		= false;
+user noarchive bool	  CanWallJump		= false;
+user noarchive bool	  CanHoming			= false;
+user noarchive bool	  CanHammerJump		= false;
+user noarchive bool	  CanJump			= false;
+user noarchive int 	  EclipseLimiter	= 0;

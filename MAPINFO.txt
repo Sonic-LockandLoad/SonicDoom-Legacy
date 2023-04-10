@@ -21,20 +21,9 @@ DamageType SonicKick
 {
 	Factor = 1
 }
-
-episode TUTORIAL
+DamageType RocketStream
 {
-	name = "Tutorial"
-}
-
-map TUTORIAL "Tutorial"
-{
-	music = C_TUT
-	next = "S_LOBBY"
-	author = "That1M8Head"
-	partime = 120
-	resethealth
-	resetinventory
+	Factor = 1
 }
 
 clearskills
@@ -75,6 +64,7 @@ skill harder
 	name = "Speed Incarnate"
 	spawnfilter = Hard
 	FastMonsters
+	mustconfirm = "You have to be pretty good at the game for this."
 }
 
 // Ultimate Doom episode clusters

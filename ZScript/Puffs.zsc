@@ -1,3 +1,51 @@
+class ShadowMeleeAtk : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+		DamageType "ShadowMelee";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+		Melee:
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class PikoPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		+NOEXTREMEDEATH
+		RenderStyle "Normal";
+		DamageType "Piko";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			PUFF A 4 Bright;
+			PUFF B 4;
+		Melee:
+			PUFF CD 4;
+			Stop;
+	}
+}
+
 class NoGibPuff : Actor
 {
 	Default
@@ -46,6 +94,30 @@ class InvisiblePuff : Actor
 	}
 }
 
+class SonicPunchPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+RANDOMIZE
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+		DamageType "SonicPunch";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 4 Bright;
+			TNT1 B 4;
+		Melee:
+			TNT1 CD 4;
+			Stop;
+	}
+}
+
 class GibPuff : Actor
 {
 	Default
@@ -70,6 +142,22 @@ class GibPuff : Actor
 	}
 }
 
+class ExplosionPuff : GibPuff
+{
+	Default
+	{
+		+PUFFONACTORS
+	}
+	States
+	{
+		Spawn:
+			MISL B 4 Bright;
+		Melee:
+			MISL CD 4;
+			Stop;
+	}
+}
+
 class InvisibleGibPuff : Actor
 {
 	Default
@@ -90,6 +178,116 @@ class InvisibleGibPuff : Actor
 			TNT1 B 4;
 		Melee:
 			TNT1 CD 4;
+			Stop;
+	}
+}
+
+class CyberShottyPuff : BulletPuff
+{
+    Default
+    {
+        ProjectileKickBack 10000;
+    }
+}
+
+class BoostPuff : InvisibleGibPuff
+{
+    Default
+    {
+        ProjectileKickBack 100000;
+		DamageType "Boost";
+    }
+}
+
+class SwordPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "Normal";
+		DamageType "Caliburn";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			PUFF A 4 Bright;
+			PUFF B 4;
+		Melee:
+			PUFF CD 4;
+			Stop;
+	}
+}
+class SonicKickPuff : BulletPuff
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+		DamageType "SonicKick";
+		ProjectileKickBack 1000;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+		Melee:
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+
+class AmyKickPuff : BulletPuff
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+FORCEPAIN;
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+		DamageType "Piko";
+		ProjectileKickBack 9999999;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+		Melee:
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class SonicDashPuff : BulletPuff
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		RenderStyle "None";
+		Alpha 0;
+		VSpeed 1;
+		Mass 5;
+		DamageType "SonicPunch";
+		ProjectileKickBack 1000000;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+		Melee:
+			TNT1 A 0;
 			Stop;
 	}
 }

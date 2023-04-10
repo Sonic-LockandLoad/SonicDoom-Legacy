@@ -152,4 +152,4 @@ MNU_DELETESG = "Delete the save data ";
 WI_FINISHED			= "STAGE COMPLETE";
 WI_ENTERING			= "NEXT STAGE";
 
-DOSY = "\c[MenuInactive] Thanks for playing Sonic the Hedgehog in Doom!\nAre you sure you want to quit?";
+DOSY = "\c[MenuInactive] Thanks for playing Sonic the Hedgehog in DOOM!\nAre you sure you want to quit?";

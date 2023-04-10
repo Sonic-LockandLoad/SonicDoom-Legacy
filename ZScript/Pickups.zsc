@@ -20,51 +20,99 @@ class Ring : CustomInventory replaces HealthBonus // 2014
 	}
 }
 
-class RingBox : CustomInventory replaces Stimpack // 2011
+class DroppedRing : Ring
+{ 
+	int fadeCounter;
+	int isVisible;
+	Default 
+	{
+		-NOGRAVITY;
+		+CANPASS;
+		+BOUNCEONWALLS
+		+BOUNCEONFLOORS
+		+BOUNCEONCEILINGS
+	}
+	override void Tick()
+	{
+		Super.Tick();
+		fadeCounter++;
+		if (fadeCounter > 30) {
+			if (fadeCounter % 3 == 0) {
+				if (!isVisible) {
+					isVisible = true;
+					A_SetTranslucent(1, 0);
+				}
+				else if (isVisible) {
+					isVisible = false;
+					A_SetTranslucent(0, 0);
+				}
+			}
+		}
+		if (fadeCounter > 100) {
+			Thing_Remove(0);
+		}
+	}
+}
+
+class DroppedRingPlayer : DroppedRing 
+{
+	Default 
+	{
+		Inventory.PickupMessage "Regained a lost ring.";
+	}
+	override bool CanPickup(Actor toucher)
+	{
+		if (fadeCounter < 20) {
+			bAlwaysPickup = false;
+			return false;
+		}
+		bAlwaysPickup = true;
+		return super.CanPickup(toucher);
+	}
+}
+
+class RingBox : Inventory replaces Stimpack // 2011
 {
 	Default
 	{
 		//$Category Lock & Load Pickups
 		Health 1;
-		Radius 20;
-		Height 30;
-		Inventory.PickupMessage "";
-		DeathSound "spickup/boxdestroy";
+		Radius 30;
+		Height 20;
+		Inventory.PickupMessage "Broke open a box of rings.";
 		+COUNTITEM
 		+INVENTORY.ALWAYSPICKUP
 		+SHOOTABLE
 		+NOBLOOD
 	}
+	override bool TryPickup(in out Actor toucher)
+	{
+		A_Die();
+		return true;
+	}
+	override int DamageMobj(Actor inflictor, Actor source, int damage, name mod, int flags, double angle)
+	{
+		Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+		A_StartSound("spickup/boxdestroy", 2);
+		int ringcount = 10;
+		int maxrange  = damage / 4;
+		if (maxrange < 5) {
+			maxrange = 5;
+		}
+		for (int x = 1; x <= ringcount; x++) {
+			int x = random(maxrange * -1, maxrange);
+			int y = random(maxrange * -1, maxrange);
+			A_SpawnItemEx("DroppedRing", 0, 0, 1, x, y, 10, 0, SXF_NOCHECKPOSITION);
+		}
+		return damage;
+	}
 	States
 	{
 		Spawn:
-			RBOX A -1;
+			RBOX A -1 Bright;
 			Stop;
-		Pickup:
 		Death:
-			TNT1 A 0 A_DropItem("BrokenRings");
-			TNT1 A 0 A_Scream;
-			Stop;
-	}
-}
-
-class BrokenRings : CustomInventory
-{
-	Default
-	{
-		Inventory.PickupMessage "Picked up 10 rings.";
-		Inventory.PickupSound "spickup/10rings";
-		+COUNTITEM
-		+INVENTORY.ALWAYSPICKUP
-	}
-	States
-	{
-		Spawn:
-			10RI ABCDEFGH 2;
-			10RI I -1;
-			Stop;
-		Pickup:
-			TNT1 A 0 A_GiveInventory("Health", 10);
+			TNT1 A 0;
 			Stop;
 	}
 }
@@ -263,7 +311,7 @@ class ChaosEmeralds : CustomInventory
 					A_GiveInventory("SuperInvincibility", 1);
 					A_PlaySound("sglobal/supersonic", 6);
 					A_PlaySound("sglobal/supertransform", 4);
-					A_Log("\c[Sonic]Let's blast through with SONIC SPEED!");
+					A_Log("\c[Sonic]Now I'll show you!!");
 					ACS_NamedExecuteAlways("TransformSuper");
 					ACS_NamedExecuteAlways("TakeRingsIfSuper");
 				}

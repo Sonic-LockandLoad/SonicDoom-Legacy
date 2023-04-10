@@ -4,7 +4,14 @@ sglobal/loserings         	LoseRing
 sglobal/superready        	supready
 sglobal/supertransform    	suptrnsf
 sglobal/invincibility     	invinc
-sglobal/nextlevel	 		letsrock
+sglobal/spring		     	spring
+sglobal/nextlevel	 		letsgo
+sglobal/drown				S_DROWN
+sglobal/reaction			REACTION
+sglobal/error				error
+sglobal/lowhealth			lohealth
+sglobal/lowenergy			loenergy
+sglobal/rankget				Rank
 
 // Pickups
 
@@ -14,51 +21,109 @@ spickup/specialring       	specring
 spickup/chaosemerald		ChEmerad
 spickup/hint				hint
 spickup/boxdestroy        	destroy
+spickup/amy         		a_pickup
+spickup/sonic       		s_pickup
+spickup/goalring			goalring
+spickup/keytablet			keypkup
 
 // Weapons (subject to reorganisation)
 
+sweapons/boost				boosts
+sweapons/speedyshot        	SpSGShot
+sweapons/speedyblast       	SpSGBlst
+sweapons/nspeedyshot		dsshott
+sweapons/speedyreload      	SpSGRlod
 sweapons/missilefire       	MislFire
 sweapons/hit               	hit1
 sweapons/finalhit          	hit2
 sweapons/swing1            	swing1
 sweapons/swing2            	swing2
 sweapons/swing3            	swing3
+sweapons/soulcharge        	soulchrg
+sweapons/soulsurge         	surge
+sweapons/hammerswing       	pikoswng
+sweapons/apistol        	pistshot
+sweapons/areload        	pistrlod
+sweapons/preciseshot       	precshot
+sweapons/zoom              	zoom
+sweapons/zoomend           	zend
+sweapons/zoomfire          	zshot
+sweapons/shurikenhit       	shurhit
+sweapons/shurikenfire1     	shuri1
+sweapons/shurikenfire2     	shuri2
+$random sweapons/shurikenfire { sweapons/shurikenfire1 sweapons/shurikenfire2 }
+sweapons/chaosspear        	spshoot
+sweapons/spearimpact       	spimpact
+sweapons/blockattack       	block1
+sweapons/blockattackx      	block2
+sweapons/blockready        	blkready
+sweapons/shockwave         	shock
+sweapons/forcereload       	forcrlod
+sweapons/pistol       		fpistol
+sweapons/swordspin         	swing4
+sweapons/shovelbonk			shovbonk
+sweapons/hammerbonk			HamBonk
+sweapons/darkshotty			assashot
+sweapons/shadowmp5			mp5shot
+sweapons/amyreload1			ashtrld1
+sweapons/amyreload2			ashtrld2
 sweapons/drift            	drift
-sweapons/sonicland			soniland
+sweapons/uboost           	uboost
+sweapons/healthcharge     	hpcharge
+sweapons/boosttrail       	bstrail
+sweapons/peelout          	peelc
+sweapons/peeloutrelease   	peelr
+sweapons/spin             	Roll
+sweapons/sdash				homing
+sweapons/reticle			SoniReti
+sweapons/slice				shuslice
+sweapons/dropdash          	DropDash
+sweapons/superdropdash      DropSupe
+sweapons/instashield		InShield
+sweapons/recoilcharge		fshtchrg
+sweapons/amyrailgunfire		STNRFIRE
+sweapons/amyrailgunreload	crosrlod
 
 // Character
 
-classic/dash              	homatk
-classic/taunt1              yo
-classic/taunt2           	heyillpl
-classic/taunt3         		sndtest
-classic/taunt4				putemup
-classic/taunt5				sandeye
-classic/memorycard			memcard
-classic/no         			noc
-classic/herego     			cherego
-classic/ifyoucan          	catchme
-classic/underestimate     	csncspd
-classic/teria				teria
-classic/homing				clahomi
-classic/oof1    		    oof1
-classic/oof2 		        oof2
-classic/oof3 		        oof3
-classic/oof4 		        oof4
-classic/oof5 		        oof5
-classic/woa1              	woa1
-classic/woa2              	woa2
-classic/woa3              	woa3
-classic/woa4              	woa4
-classic/woa5              	woa5
-classic/nextlevel			letsrock
-$random classic/driftline { classic/ifyoucan classic/herego classic/underestimate classic/teria }
-classic/goodresult			C_GOOD
-classic/badresult			C_BAD
-classic/okayresult			C_OKAY
-classic/ohno              	cono
-classic/pain       			churt
-classic/go					cgo
+sonic/thanksalotwall    	ThxWall
+sonic/thiswallsintheway 	walinway
+sonic/thatwaslame       	Lame
+sonic/scream            	Scream
+sonic/boostv1           	boostl1
+sonic/boostv2           	boostl2
+sonic/boostv3           	boostl3
+sonic/boostv4           	boostl4
+sonic/boostv5           	boostl5
+sonic/boostv6           	boostl6
+$random sonic/boost 		{ sonic/boostv1 sonic/boostv2 sonic/boostv3 sonic/boostv4 sonic/boostv5 sonic/boostv6 }
+sonic/ohno              	ohno
+sonic/grunt1            	SonicGr1
+sonic/grunt2            	SonicGr2
+sonic/grunt3            	SonicGr3
+sonic/grunt4            	SonicGr4
+sonic/grunt5            	SonicGr5
+sonic/grunt6            	SonicGr6
+sonic/hurt         			sonihurt
+sonic/taunt1       			staunt1
+sonic/taunt2       			staunt2
+sonic/taunt3       			staunt3
+sonic/herewe            	herewe
+sonic/go                	go
+sonic/notmyday				notmyday
+sonic/painx1       			SonicOw1
+sonic/painx2       			SonicOw2
+sonic/nextlevel				letsgo
+sonic/perfectresult			S_PRFECT
+sonic/goodresult			S_GOOD
+sonic/okayresult			S_OKAY
+sonic/badresult				S_BAD
+sonic/terribleresult		S_USUCK
+sonic/thatwasright			S_RIGHT
+sonic/nintendo64			snc_n64
+sonic/bossvictory			yoreover
+sonic/quickstep				quikstep
+sonic/soulcharge			soulgrnt
 
 // Menu
 
@@ -73,22 +138,59 @@ menu/clear         			ExitMenu	// Close top menu
 menu/quit1         			ImOut
 menu/quit2         			ImOut
 
+// Enemy
+
+enemy/cyberjump				cyjump
+
 // Mostly random but also not but idk I feel like this should be its own category
 
+$random sonic/cantuse 		{ sonic/thanksalotwall sonic/thiswallsintheway sonic/notmyday }
+$random amy/cantuse 		{ amy/deadend1 amy/deadend2 }
+$random shadow/cantuse 		{ shadow/no shadow/huh shadow/focused }
 $random classic/cantuse 	{ classic/oof1 classic/oof2 classic/oof3 classic/oof4 classic/oof5 }
-$random classic/death 		{ classic/no classic/woa1 classic/woa2 classic/woa3 classic/woa4 classic/woa5 }
-$random sweapons/swordswing { sweapons/swing1 sweapons/swing2 sweapons/swing3 }
-$random classic/taunt 		{ classic/taunt1 classic/taunt2 classic/taunt3 classic/taunt4 classic/taunt5 }
 
-$alias 	intermission/paststats classic/nextlevel
+$random sonic/death 		{ sonic/thatwaslame sonic/scream }
+$random amy/death 			{ amy/ohno amy/scream }
+		shadow/death		  nooooooo
+$random classic/death 		{ classic/no classic/woa1 classic/woa2 classic/woa3 classic/woa4 classic/woa5 }
+
+$random sweapons/swordswing { sweapons/swing1 sweapons/swing2 sweapons/swing3 }
+
+$random sonic/grunt 		{ sonic/grunt1 sonic/grunt2 sonic/grunt3 sonic/grunt4 sonic/grunt5 sonic/grunt6 }
+$random amy/grunt 			{ amy/grunt1 amy/grunt2 }
+$random shadow/grunt  		{ shadow/grunt1 shadow/grunt2 shadow/grunt3 shadow/grunt4 shadow/grunt5 shadow/grunt6 }
+$random shadow/cgrunt   	{ shadow/gruntc shadow/there }
+
+$random sonic/pain 			{ sonic/hurt sonic/painx1 sonic/painx2 }
+$random amy/pain 			{ amy/hurt1 amy/hurt2 amy/hurt3 }
+		shadow/pain        	  d_pain
+
+$random sonic/taunt 		{ sonic/taunt1 sonic/taunt2 sonic/taunt3 }
+		amy/taunt			  a_taunt
+$random shadow/taunt 		{ shadow/taunt1 shadow/taunt2 }
+$random classic/taunt 		{ classic/taunt1 classic/taunt2 classic/taunt3 classic/taunt4 }
+
+$random sglobal/nextlevel { sonic/nextlevel amy/nextlevel classic/nextlevel shadow/nextlevel }
+$alias intermission/paststats sglobal/nextlevel
+	
+		sonic/startup		s_strtup
+$alias  misc/startupdone	sonic/startup
+$volume misc/startupdone	0.5
 
 // Player
 
-$playeralias sonic	 male 		*usefail              	classic/cantuse
-$playersound sonic	 male 		*jump                 	cjump
-$playersound sonic	 male 		*grunt                	S_LAND
-$playersound sonic	 male 		*land                 	S_LAND
-$playersound sonic	 male 		sglobal/supersonic  	csuptrns
+$playersound sonic 	 male 		*death                  sonic/death
+$playeralias sonic 	 male 		*usefail                sonic/cantuse
+$playersound sonic 	 male 		*jump                   S_JUMP
+$playersound sonic 	 male 		*doublejump				S_DBJUMP
+								sonic/doublejump		*doublejump
+								sonic/walljump			S_WAJUMP
+$playersound sonic 	 male 		*grunt                  S_LAND
+$playersound sonic 	 male 		*land                   S_LAND
+$playersound sonic 	 male 		*fall	                sonifall
+$playersound sonic 	 male 		*slam                   soniland
+$playersound sonic 	 male 		*crouchslide            cslide
+$playersound sonic 	 male 		sglobal/supersonic    	nowshow
 
 // DOOM replacements
 
@@ -100,3 +202,7 @@ misc/k_pkup                		keypkup
 misc/secret                		SecretFd
 
 brain/sight						RIAHESON
+
+// Doox
+
+doox/nyeh						nyeh

@@ -3,11 +3,11 @@ version "4.0"
 This ZScript file doesn't have anything in it except includes.
 */
 #include "zscript/ammo.zsc"
-#include "zscript/dummyinv.zsc"
 #include "zscript/enemies.zsc"
 #include "zscript/pickups.zsc"
 #include "zscript/player.zsc"
 #include "zscript/powerups.zsc"
+#include "zscript/projectiles.zsc"
 #include "zscript/puffs.zsc"
 #include "zscript/replacements.zsc"
 #include "zscript/weapons.zsc"

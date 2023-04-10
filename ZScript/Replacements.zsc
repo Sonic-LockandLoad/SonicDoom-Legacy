@@ -83,7 +83,7 @@ class PistolReplace : Actor replaces Pistol // 5010
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_SpawnItem("ChaosBlaster");
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosCapsule");
 			Stop;
 	}
 }
@@ -128,7 +128,7 @@ class ChaingunReplace : Actor replaces Chaingun // 2002
 	States 
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_SpawnItem("ChaosRain");
+			TNT1 A 0 NoDelay A_SpawnItem("EclipseBlaster");
 			Stop;
 	}
 }
@@ -158,7 +158,7 @@ class RocketReplace : Actor replaces RocketLauncher // 2003
 	States 
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_SpawnItem("ClassicRocketStream");
+			TNT1 A 0 NoDelay A_SpawnItem("RocketStream");
 			Stop;
 	}
 }
@@ -173,7 +173,7 @@ class PlasmaRifleReplace : Actor replaces PlasmaRifle // 2004
 	States 
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_SpawnItem("ChaosRain");
+			TNT1 A 0 NoDelay A_SpawnItem("EclipseBlaster");
 			Stop;
 	}
 }
