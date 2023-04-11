@@ -49,7 +49,6 @@ class SonicPlayer : PlayerPawn
 	override void CheckJump()
 	{
 		let player = self.player;
-		bool isTouchingWall = GetCvar("CanWallJump");
 		int buttons = GetPlayerInput(MODINPUT_BUTTONS);
 		if (GetPlayerInput(MODINPUT_BUTTONS) & BT_JUMP && !(GetPlayerInput(MODINPUT_OLDBUTTONS) & BT_JUMP)) {
 			int buttons = GetPlayerInput(MODINPUT_BUTTONS);
