@@ -128,7 +128,7 @@ class ChaingunReplace : Actor replaces Chaingun // 2002
 	States 
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_SpawnItem("EclipseBlaster");
+			TNT1 A 0 NoDelay A_SpawnItem("ChaosRain");
 			Stop;
 	}
 }
