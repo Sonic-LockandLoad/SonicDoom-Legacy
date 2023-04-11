@@ -96,18 +96,6 @@ script "InitMusic" ENTER
 	SetMusic("*", 0);
 }
 
-script "DeathMusic" (int xdeath)
-{
-	if (GetCvar("DeathMusic")) {
-		if (xdeath) { SetMusic("S_DEADX", 0); }
-		else {
-			SetMusic("S_DEADM", 0);
-			Delay(9*35);
-			SetMusic("*");
-		}
-	}
-}
-
 script "TakeRingsIfSuper" (void)
 {
 	while (CheckInventory("PowerSuper"))
@@ -125,15 +113,6 @@ script "TakeRingsIfSuper" (void)
 script "SetAirControl" ENTER
 {
 	 SetAirControl(0.5);
-}
-
-script "KickCooldown" ENTER
-{
-	while (true)
-	{
-		Delay(1);
-		TakeInventory("KickCooldown", 1);
-	}
 }
 
 script "RingCountCheck" ENTER
