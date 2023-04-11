@@ -1,4 +1,4 @@
-<h1 align=center>Welcome to Sonic the Hedgehog in Doom!</h1>
+<h1 align=center>Welcome to Sonic the Hedgehog in DOOM!</h1>
 
 <img src=https://sonic-lockandload.github.io/STH-In-DoomLogo.png>
 
