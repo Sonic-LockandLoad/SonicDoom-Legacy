@@ -190,7 +190,7 @@ $playersound sonic 	 male 		*land                   S_LAND
 $playersound sonic 	 male 		*fall	                sonifall
 $playersound sonic 	 male 		*slam                   soniland
 $playersound sonic 	 male 		*crouchslide            cslide
-$playersound sonic 	 male 		sglobal/supersonic    	nowshow
+$playersound sonic 	 male 		sglobal/supersonic    	supsonic
 
 // DOOM replacements
 

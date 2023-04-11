@@ -100,7 +100,7 @@ script "TakeRingsIfSuper" (void)
 {
 	while (CheckInventory("PowerSuper"))
 	{
-		Delay(2);
+		Delay(3);
 		TakeInventory("ChaosEnergy", 1);
 		if (!CheckInventory("ChaosEnergy"))
 		{

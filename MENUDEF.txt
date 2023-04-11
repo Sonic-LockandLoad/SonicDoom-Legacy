@@ -120,7 +120,7 @@ OptionValue "EnabledOrNot"
 OptionValue "SuperM"
 {
 	0, "None"
-	1, "Open Your Heart"
+	1, "Sonic Colo(u)rs"
 }
 OptionValue "InvinM"
 {
