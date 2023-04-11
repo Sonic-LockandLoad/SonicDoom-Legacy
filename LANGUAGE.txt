@@ -136,13 +136,13 @@ C6TEXT =
 	"\n"
 	"You'd better blaze through this one!";
 	
-QUITMSG1 = "\c[MenuActive] I see your problem... too slow!";
-QUITMSG2 = "\c[MenuActive] What's the matter? Can't keep up?";
-QUITMSG3 = "\c[MenuActive] I've already lapped you three times...";
-QUITMSG4 = "\c[MenuActive] Hey! Wait! What about your memories?!";
-QUITMSG5 = "\c[MenuActive] Talk about low budget mods,\nno campaign or tutorial...";
-QUITMSG6 = "\c[MenuActive] How long is this game gonna go on?";
-QUITMSG7 = "\c[MenuActive] <Insert funny Sonic reference here>";
+QUITMSG1 = "\c[MenuActive]I see your problem... too slow!";
+QUITMSG2 = "\c[MenuActive]I rolled Sonic!";
+QUITMSG3 = "\c[MenuActive]I've already lapped you three times...";
+QUITMSG4 = "\c[MenuActive]Huh...\nI'm sure it says fast.";
+QUITMSG5 = "\c[MenuActive]Talk about low budget mods!\nNo food or movies?\nI'm outta here!";
+QUITMSG6 = "\c[MenuActive]HA!\nYou think this puny moat can keep out someone...\nSO FAST?!";
+QUITMSG7 = "\c[MenuActive]Arsalan please add quit message";
 
 NEWSAVE = "New Save Data";
 SAVEDEAD = "\c[MenuInactive] You're not currently playing.\n\nPress a key to go back.";
