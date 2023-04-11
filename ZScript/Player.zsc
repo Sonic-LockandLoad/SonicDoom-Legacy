@@ -51,8 +51,7 @@ class SonicPlayer : PlayerPawn
 		let player = self.player;
 		bool isTouchingWall = GetCvar("CanWallJump");
 		int buttons = GetPlayerInput(MODINPUT_BUTTONS);
-		bool IsBoostingMidAir = (player.ReadyWeapon.GetClassName() == "Caliburn" && (buttons & BT_ALTATTACK) && !player.onground);
-		if (GetPlayerInput(MODINPUT_BUTTONS) & BT_JUMP && !(GetPlayerInput(MODINPUT_OLDBUTTONS) & BT_JUMP) && !IsBoostingMidAir) {
+		if (GetPlayerInput(MODINPUT_BUTTONS) & BT_JUMP && !(GetPlayerInput(MODINPUT_OLDBUTTONS) & BT_JUMP)) {
 			int buttons = GetPlayerInput(MODINPUT_BUTTONS);
 			if (bNoGravity) {
 				Vel.Z = 3.;
