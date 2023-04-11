@@ -32,7 +32,6 @@ class BoostEnabledWeapon : LockLoadWeapon
 			}
 			A_StartSound("sonic/boost", 6);
 			A_StartSound("sweapons/boost", 7);
-			if (!form) A_TakeInventory("ChaosEnergy", 5);
 		}
 		switch (form) {
 			default:
@@ -45,7 +44,6 @@ class BoostEnabledWeapon : LockLoadWeapon
 				/* Super Sonic */
 				A_SetMugShotState("SuperBoost");
 				A_FireBullets(120, 120, 150, 999, "BoostPuff", FBF_NORANDOM, 140);
-				A_TakeInventory("ChaosEnergy", 1);
 				break;
 		}
 		A_PlaySound("sweapons/boosttrail", 1, 1.0, true);
