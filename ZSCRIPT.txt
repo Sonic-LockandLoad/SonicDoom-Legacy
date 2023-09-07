@@ -10,4 +10,5 @@ This ZScript file doesn't have anything in it except includes.
 #include "zscript/projectiles.zsc"
 #include "zscript/puffs.zsc"
 #include "zscript/replacements.zsc"
+#include "zscript/statusbar.zsc"
 #include "zscript/weapons.zsc"

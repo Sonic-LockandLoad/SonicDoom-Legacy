@@ -15,6 +15,7 @@ gameinfo
    menufontcolor_header = "MenuInactive"
    menufontcolor_highlight = "MenuInactive"
    menufontcolor_selection = "MenuActive"
+   StatusBarClass = "SLL_StatusBar"
 }
 
 DamageType SonicKick
